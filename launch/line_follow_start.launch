@@ -1,6 +1,0 @@
-<launch>
-    <node name="driver" pkg="line_follower_pa_lisandro" type="driver.py" output="screen"/>
-    <node name="image_handler" pkg="line_follower_pa_lisandro" type="image_handler.py" output="screen"/>
-    <node name="line_finder" pkg="line_follower_pa_lisandro" type="explorer.py" output="screen"/>
-    <node name="PID" pkg="line_follower_pa_lisandro" type="PID.py" output="screen"/>
-</launch>

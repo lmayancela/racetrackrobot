@@ -6,7 +6,7 @@
 
 import rospy
 from geometry_msgs.msg import Twist
-from line_follower_pa_lisandro.msg import img_data
+from racetrackpa.msg import img_data
 from constants import *
 
 def img_data_cb(msg):
