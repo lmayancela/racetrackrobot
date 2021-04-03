@@ -7,7 +7,7 @@
 import rospy, cv2, cv_bridge, numpy, math
 from constants import *
 from sensor_msgs.msg import Image
-from line_follower_pa_lisandro.msg import img_data
+from racetrackpa.msg import img_data
 
 
 # Find the center of the white spot at the specified horizontal row
@@ -16,11 +16,9 @@ def find_white_mid(image, row):
     start = -1 # Index where white started
     end = -1 #Index white ended
 
-     # Delete this
-    height, width, _ = image.shape()
-    # --------------------------------------
+    # image = image[0:IMG_HEIGHT, 100:IMG_WIDTH-100]
 
-    for i in range(0, width):
+    for i in range(0, IMG_WIDTH):
         pixel = image[row, i] # Get pixel from this row at index i
         print(pixel)
         if pixel == WHITE:
@@ -70,10 +68,6 @@ rospy.init_node('image_handler')
 
 def imgcb(msg):
     image = bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
-    # Delete this
-    height, width, _ = image.shape()
-    image = image[0:height, 50:width-50]
-    # --------------------------------------
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
     # Defining range of yellow color in HSV
@@ -81,8 +75,8 @@ def imgcb(msg):
     lower_yellow = numpy.array([20, 100, 100])
 
     # Delete this 
-    upper_white = numpy.array([0, 0, 255])
-    lower_white = numpy.array([0, 0, 0])
+    upper_white = numpy.array([255, 10, 100])
+    lower_white = numpy.array([0, 0, 25])
     # --------------------------------------
 
 

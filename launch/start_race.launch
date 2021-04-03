@@ -1,0 +1,6 @@
+<launch>
+    <node name="driver" pkg="racetrackpa" type="driver.py" output="screen"/>
+    <node name="image_handler" pkg="racetrackpa" type="image_handler.py" output="screen"/>
+    <node name="line_finder" pkg="racetrackpa" type="explorer.py" output="screen"/>
+    <node name="PID" pkg="racetrackpa" type="PID.py" output="screen"/>
+</launch>
