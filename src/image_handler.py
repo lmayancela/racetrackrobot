@@ -20,7 +20,7 @@ def find_white_mid(image, row):
 
     for i in range(0, IMG_WIDTH):
         pixel = image[row, i] # Get pixel from this row at index i
-        print(pixel)
+        #removed print statement
         if pixel == WHITE:
             if not found:
                 start = i
@@ -89,7 +89,7 @@ def imgcb(msg):
     SECTION_BOTTOM = .8 * IMG_HEIGHT
     top = find_white_mid(mask, int(SECTION_TOP))
     bottom = find_white_mid(mask, int(SECTION_BOTTOM))
-    print((top,bottom))
+    #removed print statement
 
     img_results_msg = img_data()
 
